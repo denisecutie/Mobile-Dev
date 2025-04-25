@@ -6,7 +6,7 @@ const ProfileScreen = () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/images/me.png')} // Change to your actual photo if you have one
+        source={require('../../assets/images/me.png')} 
         style={styles.profileImage}
       />
       <Text style={styles.name}>Denise Valerie</Text>
