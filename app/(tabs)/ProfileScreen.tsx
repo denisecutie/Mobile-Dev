@@ -1,12 +1,23 @@
-//ProfileScreen.tsx
+// ProfileScreen.tsx
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
 const ProfileScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Profile</Text>
-      <Text style={styles.message}>This is the profile screen.</Text>
+      <Image
+        source={require('../../assets/images/me.png')} // Change to your actual photo if you have one
+        style={styles.profileImage}
+      />
+      <Text style={styles.name}>Denise Valerie</Text>
+      <Text style={styles.username}>@denisecutie</Text>
+
+      <View style={styles.details}>
+        <Text style={styles.detailItem}>📧 alindenise802@gmail.com</Text>
+        <Text style={styles.detailItem}>📍 Danglag, Consolacion, Cebu, Philippines</Text>
+        <Text style={styles.detailItem}>💻 Mobile Developer • UI Enthusiast</Text>
+        <Text style={styles.detailItem}>🦄 Loves pastel and clean design</Text>
+      </View>
     </View>
   );
 };
@@ -14,19 +25,44 @@ const ProfileScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#CDB4DB',
+    alignItems: 'center',
+    paddingTop: 60,
+    paddingHorizontal: 20,
   },
-  header: {
-    fontSize: 32,
+  profileImage: {
+    width: 140,
+    height: 140,
+    borderRadius: 70,
+    marginBottom: 20,
+    borderWidth: 3,
+    borderColor: '#FFF',
+  },
+  name: {
+    fontSize: 28,
     fontWeight: 'bold',
     color: '#A2D2FF',
   },
-  message: {
+  username: {
     fontSize: 16,
-    color: '#FFFFFF',
-    textAlign: 'center',
+    color: '#FEE440',
+    marginBottom: 20,
+  },
+  details: {
+    backgroundColor: '#BDE0FE',
+    borderRadius: 16,
+    padding: 20,
+    width: '100%',
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  detailItem: {
+    fontSize: 16,
+    color: '#333',
+    marginBottom: 8,
   },
 });
 
